@@ -180,6 +180,7 @@ const HTML = `<!DOCTYPE html>
             <option>Auxiliar Financeiro</option>
           </select>
         </div>
+        <div class="form-group"><label>Cargo</label><input id="f-cargo" type="text" placeholder="Ex: Psicólogo Clínico, Coordenador..."></div>
         <div class="form-group"><label>Tipo de Conselho</label>
           <select id="f-conselho">
             <option value="">Nenhum</option>
@@ -187,6 +188,7 @@ const HTML = `<!DOCTYPE html>
             <option>CREFITO</option>
             <option>CREFONO</option>
             <option>CREF</option>
+            <option>ABPp</option>
           </select>
         </div>
         <div class="form-group"><label>Número do Conselho</label><input id="f-ncons" type="text" placeholder="Ex: 09/99999"></div>
@@ -336,7 +338,7 @@ function salvarProf() {
   const prof = {
     id:Date.now(), nome, cpf, rg:v('f-rg'), nasc, tel,
     email:v('f-email'), end:v('f-end'), pix:v('f-pix'),
-    esp, conselho:v('f-conselho'), ncons:v('f-ncons'),
+    esp, cargo:v('f-cargo'), conselho:v('f-conselho'), ncons:v('f-ncons'),
     horario:v('f-horario'), csem:v('f-csem'), cmen:v('f-cmen'),
     hora:v('f-hora'), vrec:v('f-vrec'), plano
   };
@@ -349,7 +351,7 @@ function salvarProf() {
 }
 
 function limparForm(keep) {
-  ['f-nome','f-cpf','f-rg','f-nasc','f-tel','f-email','f-end','f-pix','f-ncons','f-horario','f-csem','f-cmen','f-hora','f-vrec']
+  ['f-nome','f-cpf','f-rg','f-nasc','f-tel','f-email','f-end','f-pix','f-cargo','f-ncons','f-horario','f-csem','f-cmen','f-hora','f-vrec']
     .forEach(id => document.getElementById(id).value='');
   document.getElementById('f-esp').value='';
   document.getElementById('f-conselho').value='';
