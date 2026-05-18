@@ -1,11 +1,9 @@
 {
   "name": "sistema-financeiro-rh",
   "version": "1.0.0",
-  "description": "Sistema Financeiro e RH para gestão de profissionais",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2"
