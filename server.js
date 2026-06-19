@@ -426,7 +426,15 @@ function salvarEdicao() {
     horario: v('e-horario'), csem: v('e-csem'), cmen: v('e-cmen'),
     hora: v('e-hora'), vrec: v('e-vrec'), plano
   };
-  salvarLS(); fecharModal(); renderTable();
+  salvarLS();
+  fecharModal();
+  buildFilters();
+  renderTable();
+  // Garante que a aba profissionais está visível e atualizada
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(x => x.classList.remove('active'));
+  document.getElementById('tab-profissionais').classList.add('active');
+  document.querySelectorAll('.nav-btn')[1].classList.add('active');
 }
 
 // Fechar modal clicando fora
